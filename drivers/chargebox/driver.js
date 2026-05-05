@@ -3,6 +3,23 @@ const Homey = require('homey');
 const CubeChargeAPI = require('../../lib/cubecharge-api');
 
 class ChargeBoxDriver extends Homey.Driver {
+  async onInit() {
+    this.statusUpdatedTrigger = this.homey.flow.getDeviceTriggerCard('cubecharge_status_updated');
+
+    this.homey.flow
+      .getActionCard('cubecharge_start_charging')
+      .registerRunListener(async args => {
+        await args.device.startCharging({
+          connectorId: args.connector_id,
+          idTag: args.id_tag,
+        });
+      });
+  }
+
+  async triggerStatusUpdated(device, tokens) {
+    await this.statusUpdatedTrigger.trigger(device, tokens);
+  }
+
   async onPair(session) {
     let apiKey;
     let devicesPromise;
@@ -33,6 +50,8 @@ class ChargeBoxDriver extends Homey.Driver {
           });
 
           const boxes = await api.getChargeBoxes();
+
+          await this.homey.app.ensureCubeChargeWebhookSubscription({ apiKey });
 
           return boxes.map(box => {
             const chargeBoxId = box.chargeBoxId || box.id;

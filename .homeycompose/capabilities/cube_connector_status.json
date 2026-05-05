@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Connector status",
+    "nl": "Connectorstatus"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "preventInsights": true
+}

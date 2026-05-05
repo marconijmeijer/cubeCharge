@@ -10,7 +10,8 @@
     "xlarge": "/drivers/chargebox/assets/images/xlarge.png"
   },
   "capabilities": [
-    "onoff"
+    "onoff",
+    "cube_connector_status"
   ],
   "pair": [
     {

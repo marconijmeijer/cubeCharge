@@ -1,0 +1,90 @@
+{
+  "triggers": [
+    {
+      "id": "cubecharge_status_updated",
+      "title": {
+        "en": "The connector status changed",
+        "nl": "De connectorstatus is bijgewerkt"
+      },
+      "titleFormatted": {
+        "en": "The connector status changed",
+        "nl": "De connectorstatus is bijgewerkt"
+      },
+      "tokens": [
+        {
+          "name": "status",
+          "type": "string",
+          "title": {
+            "en": "Status",
+            "nl": "Status"
+          }
+        },
+        {
+          "name": "connector_id",
+          "type": "number",
+          "title": {
+            "en": "Connector ID",
+            "nl": "Connector ID"
+          }
+        },
+        {
+          "name": "charge_box_id",
+          "type": "string",
+          "title": {
+            "en": "Charge box ID",
+            "nl": "Charge box ID"
+          }
+        },
+        {
+          "name": "event_type",
+          "type": "string",
+          "title": {
+            "en": "Event type",
+            "nl": "Event type"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "cubecharge_start_charging",
+      "title": {
+        "en": "Start charging",
+        "nl": "Start laden"
+      },
+      "titleFormatted": {
+        "en": "Start charging on connector [[connector_id]] with idTag [[id_tag]]",
+        "nl": "Start laden op connector [[connector_id]] met idTag [[id_tag]]"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "connector_id",
+          "title": {
+            "en": "Connector ID",
+            "nl": "Connector ID"
+          },
+          "min": 1,
+          "step": 1,
+          "placeholder": {
+            "en": "1",
+            "nl": "1"
+          }
+        },
+        {
+          "type": "text",
+          "name": "id_tag",
+          "title": {
+            "en": "idTag",
+            "nl": "idTag"
+          },
+          "placeholder": {
+            "en": "RFID123456",
+            "nl": "RFID123456"
+          }
+        }
+      ]
+    }
+  ]
+}
