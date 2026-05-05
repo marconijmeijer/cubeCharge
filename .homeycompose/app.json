@@ -7,7 +7,7 @@
     "en": "Control CubeCharging charge boxes via API."
   },
   "brandColor": "#111111",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "category": [
     "energy"
   ],
