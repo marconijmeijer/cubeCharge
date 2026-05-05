@@ -7,16 +7,10 @@
   "description": {
     "en": "Control CubeCharging charge boxes via API."
   },
-  "brandColor": "#111111",
-  "version": "0.2.3",
+  "version": "0.1.1",
   "category": [
     "energy"
   ],
-  "images": {
-    "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png",
-    "xlarge": "/assets/images/xlarge.png"
-  },
   "main": "app.js",
   "compatibility": ">=5.0.0",
   "author": {
@@ -32,12 +26,7 @@
       "name": {
         "en": "CubeCharging Charge Box"
       },
-      "class": "other",
-      "images": {
-        "small": "/drivers/chargebox/assets/images/small.png",
-        "large": "/drivers/chargebox/assets/images/large.png",
-        "xlarge": "/drivers/chargebox/assets/images/xlarge.png"
-      },
+      "class": "socket",
       "capabilities": [
         "onoff"
       ],
@@ -45,11 +34,8 @@
         {
           "id": "api_key",
           "navigation": {
-            "next": "loading"
+            "next": "list_devices"
           }
-        },
-        {
-          "id": "loading"
         },
         {
           "id": "list_devices",
@@ -62,27 +48,6 @@
         {
           "id": "add_devices",
           "template": "add_devices"
-        }
-      ],
-      "connectivity": [
-        "cloud"
-      ],
-      "platforms": [
-        "local"
-      ],
-      "settings": [
-        {
-          "id": "charge_box_id",
-          "type": "label",
-          "label": {
-            "en": "Device ID",
-            "nl": "Device ID"
-          },
-          "value": "",
-          "hint": {
-            "en": "The CubeCharging charge box ID used by this Homey device.",
-            "nl": "Het CubeCharging charge box ID dat door dit Homey-apparaat wordt gebruikt."
-          }
         }
       ]
     }
