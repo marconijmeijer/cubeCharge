@@ -44,6 +44,7 @@ class ChargeBoxDriver extends Homey.Driver {
             return {
               name: box.description || chargeBoxId,
               data: { id: String(chargeBoxId) },
+              settings: { charge_box_id: String(chargeBoxId) },
               store: { apiKey },
             };
           });

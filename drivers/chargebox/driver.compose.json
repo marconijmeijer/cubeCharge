@@ -3,17 +3,21 @@
   "name": {
     "en": "CubeCharging Charge Box"
   },
-  "class": "socket",
+  "class": "other",
   "images": {
     "small": "/drivers/chargebox/assets/images/small.png",
     "large": "/drivers/chargebox/assets/images/large.png",
     "xlarge": "/drivers/chargebox/assets/images/xlarge.png"
   },
-  "capabilities": ["onoff"],
+  "capabilities": [
+    "onoff"
+  ],
   "pair": [
     {
       "id": "api_key",
-      "navigation": { "next": "loading" }
+      "navigation": {
+        "next": "loading"
+      }
     },
     {
       "id": "loading"
@@ -21,11 +25,20 @@
     {
       "id": "list_devices",
       "template": "list_devices",
-      "navigation": { "next": "add_devices", "prev": "api_key" }
+      "navigation": {
+        "next": "add_devices",
+        "prev": "api_key"
+      }
     },
     {
       "id": "add_devices",
       "template": "add_devices"
     }
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "platforms": [
+    "local"
   ]
 }

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "charge_box_id",
+    "type": "label",
+    "label": {
+      "en": "Device ID",
+      "nl": "Device ID"
+    },
+    "value": "",
+    "hint": {
+      "en": "The CubeCharging charge box ID used by this Homey device.",
+      "nl": "Het CubeCharging charge box ID dat door dit Homey-apparaat wordt gebruikt."
+    }
+  }
+]

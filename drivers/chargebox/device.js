@@ -4,6 +4,10 @@ const CubeChargeAPI = require('../../lib/cubecharge-api');
 
 class ChargeBoxDevice extends Homey.Device {
   async onInit() {
+    await this.setSettings({
+      charge_box_id: String(this.getData().id),
+    });
+
     this.api = new CubeChargeAPI({
       apiKey: this.getStoreValue('apiKey') || this.getData().apiKey,
     });
