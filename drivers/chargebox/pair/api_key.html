@@ -1,0 +1,58 @@
+<header class="homey-header">
+  <h1 class="homey-title">CubeCharging</h1>
+  <p class="homey-subtitle">Enter your API key to find your charge boxes.</p>
+</header>
+
+<form id="api-key-form" class="homey-form">
+  <fieldset class="homey-form-fieldset">
+    <legend class="homey-form-legend">API Key</legend>
+
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="api-key">API Key</label>
+      <input
+        id="api-key"
+        class="homey-form-input"
+        name="api_key"
+        type="password"
+        autocomplete="off"
+        placeholder="API Key"
+        required
+      />
+    </div>
+  </fieldset>
+
+  <button id="continue-button" class="homey-button-primary-full" type="submit">
+    Continue
+  </button>
+</form>
+
+<script type="application/javascript">
+  const form = document.getElementById('api-key-form');
+  const input = document.getElementById('api-key');
+  const button = document.getElementById('continue-button');
+
+  Homey.setTitle('CubeCharging');
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const apiKey = input.value.trim();
+    if (!apiKey) {
+      await Homey.alert('Please enter your CubeCharging API key.', 'warning');
+      return;
+    }
+
+    button.disabled = true;
+    Homey.showLoadingOverlay();
+
+    try {
+      await Homey.emit('save_api_key', { apiKey });
+      await Homey.nextView();
+    } catch (error) {
+      await Homey.alert(error && error.message ? error.message : String(error), 'error');
+    } finally {
+      Homey.hideLoadingOverlay();
+      button.disabled = false;
+    }
+  });
+</script>

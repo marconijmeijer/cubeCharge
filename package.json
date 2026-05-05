@@ -1,0 +1,32 @@
+{
+  "name": "cubecharge-homey-app",
+  "version": "0.2.0",
+  "description": "Homey app to control CubeCharging charge boxes via API.",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "homey",
+    "cubecharging",
+    "charge box",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@eslint/css": "^1.2.0",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.2.0",
+    "@eslint/markdown": "^8.0.1",
+    "axios": "^1.6.0",
+    "globals": "^17.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.3.0"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
