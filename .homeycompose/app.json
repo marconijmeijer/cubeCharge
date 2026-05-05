@@ -64,5 +64,15 @@
         }
       ]
     }
-  ]
+  ],
+  "platforms": [
+    "local"
+  ],
+  "tags": {
+    "en": [
+      "Cube",
+      "Charger",
+      ""
+    ]
+  }
 }
