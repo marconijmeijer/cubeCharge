@@ -32,7 +32,7 @@
       "name": {
         "en": "CubeCharging Charge Box"
       },
-      "class": "socket",
+      "class": "other",
       "images": {
         "small": "/drivers/chargebox/assets/images/small.png",
         "large": "/drivers/chargebox/assets/images/large.png",
@@ -63,6 +63,12 @@
           "id": "add_devices",
           "template": "add_devices"
         }
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
       ],
       "settings": [
         {
